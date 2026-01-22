@@ -45,6 +45,7 @@
     "@types/html-to-text": "^9.0.4",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.0.10",
-    "@types/nodemailer": "^7.0.4"
+    "@types/nodemailer": "^7.0.4",
+    "typescript": "^5.9.3"
   }
 }
