@@ -21,6 +21,7 @@
     "@langchain/langgraph": "^1.0.7",
     "@langchain/openai": "^1.2.0",
     "@tavily/core": "^0.6.4",
+    "@types/node": "^25.0.10",
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "concurrently": "^9.2.1",
@@ -44,7 +45,6 @@
     "@types/express": "^5.0.6",
     "@types/html-to-text": "^9.0.4",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^25.0.10",
     "@types/nodemailer": "^7.0.4",
     "typescript": "^5.9.3"
   }
