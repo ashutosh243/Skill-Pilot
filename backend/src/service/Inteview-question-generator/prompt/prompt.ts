@@ -1,4 +1,4 @@
-import { State } from "../types";
+import { State } from "../types.js";
 
 export function webQuestiongenerationPrompt(context: string, state: State): { SYSTEM: string, USER: string } {
 

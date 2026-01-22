@@ -1,4 +1,4 @@
-import { State } from "../types";
+import { State } from "../types.js";
 
 export const merge = async (state: State): Promise<Partial<State>> => {
 
@@ -8,7 +8,7 @@ export const merge = async (state: State): Promise<Partial<State>> => {
             type: "web"
         }
     });
-    const ai = state.questionWeb.map((q) => {
+    const ai = state.questionWeb.map((q:any) => {
         return {
             ...q,
             type: "ai"

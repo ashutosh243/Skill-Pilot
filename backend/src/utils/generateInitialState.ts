@@ -1,4 +1,4 @@
-export default function getInitialState(pathData) {
+export default function getInitialState(pathData:any) {
     return {
         userId: String(pathData?.userId),
         goal: pathData.goal,

@@ -1,4 +1,4 @@
-import { time } from "node:console";
+
 
 
 export function skillGenerationprompts(currentSkills: string[], goal: string, level: string): { SYSTEM: string, USER: string } {
@@ -16,7 +16,7 @@ export function skillGenerationprompts(currentSkills: string[], goal: string, le
     return { SYSTEM, USER };
 
 }
-export function planGenerationPrompts(targetSkills: string[], currentSkills: string[], goal: string, level: string, timeperDay: string): { SYSTEM: string, USER: string } {
+export function planGenerationPrompts(targetSkills: string[], currentSkills: string[], goal: string, level: string, timeperDay: number): { SYSTEM: string, USER: string } {
 
     const SYSTEM = `
           you are smart plan generator assistant
