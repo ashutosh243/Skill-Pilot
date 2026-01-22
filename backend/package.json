@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "tsc --watch",
     "nodemon-watch": "nodemon ./dist/index.js",
-    "dev": "concurrently \"npm run watch\" \"npm run nodemon-watch\" "
+    "dev": "concurrently \"npm run watch\" \"npm run nodemon-watch\" ",
+    "start": "node dist/index.js"
   },
   "author": "Ashutosh",
   "license": "ISC",
