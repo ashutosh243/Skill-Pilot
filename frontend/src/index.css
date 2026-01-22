@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@keyframes pathMove {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(400%);
+  }
+}
+
+.animate-pathMove {
+  animation: pathMove 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseSlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.animate-pulseSlow {
+  animation: pulseSlow 2s ease-in-out infinite;
+}
