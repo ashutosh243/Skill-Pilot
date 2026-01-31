@@ -36,7 +36,7 @@ const login = async (req: Request, res: Response) => {
 
         //need to implement jwt here-------------
         const token = generateToken({ id: user._id });
-        res.cookie('accessToken', token, { httpOnly: true, sameSite: "lax", maxAge: 7 * 24 * 60 * 60 * 1000 });
+        res.cookie('accessToken', token, { httpOnly: true, sameSite: "none", secure: true, maxAge: 7 * 24 * 60 * 60 * 1000 });
 
         return res.status(StatusCodes.OK).json({ success: true, msg: "user logged in successfully" });
     }
