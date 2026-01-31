@@ -1,4 +1,4 @@
 const config={
-    backendEndpoint:'http://localhost:8000'
+    backendEndpoint:'https://skill-pilot-14g4.onrender.com'
 }
 export default config;
