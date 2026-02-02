@@ -23,7 +23,7 @@ export const authmiddlware = (req: Request, res: Response, next: NextFunction) =
             user: null,
             msg: "user not authorized"
         });
-        res.locals.user = decode;  // new things to learn
+        res.locals.user = decode; 
         next();
 
     } catch (e) {

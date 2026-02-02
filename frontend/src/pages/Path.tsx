@@ -29,7 +29,13 @@ const AllPaths = () => {
     }, []);
 
     const handleDelete = async (id: string) => {
-        console.log(id);
+
+        setLoading(true);
+        const res = await axios.delete(`${config.backendEndpoint}/api/v1/path/${id}`, { withCredentials: true });
+        const data = await res.data;
+        if (data.success)
+            alert("path deleted successfully");
+        setLoading(false);
     };
 
     if (loading) return <p className="text-center mt-10">Loading...</p>;

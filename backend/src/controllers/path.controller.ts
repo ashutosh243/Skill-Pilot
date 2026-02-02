@@ -74,7 +74,8 @@ export async function startPath(req: Request, res: Response) {
 export async function getPath(req: Request, res: Response) {
 
     try {
-        const response = await Path.find({});
+        const id = res.locals.user.id;
+        const response = await Path.find({userId:id});
         return res.status(StatusCodes.OK).json({ success: true, path: response });
     }
     catch (e) {
@@ -85,10 +86,10 @@ export async function getPath(req: Request, res: Response) {
 }
 export async function getSinglepath(req: Request, res: Response) {
 
-    try {
+    try{
+
         const { id } = req.params;
         const path = await Path.findById(id);
-
         if (!path) {
             return res.status(StatusCodes.NOT_FOUND).json({
                 success: false,
@@ -99,6 +100,27 @@ export async function getSinglepath(req: Request, res: Response) {
     }
     catch (e) {
         const msg = (e instanceof Error) ? e.message : "Unknow error";
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ success: false, msg });
+    }
+}
+export async function deletePath(req: Request, res: Response) {
+
+    try {
+        const { id } = req.params;
+        const response = await Path.findByIdAndDelete(id);
+
+        if (!response) {
+            return res.status(StatusCodes.NOT_FOUND).json({
+                success: false,
+                msg: "Path not found"
+            });
+        }
+        return res.status(StatusCodes.OK).json(({
+            success: true
+        }));
+    }
+    catch (e) {
+        const msg = (e instanceof Error) ? e.message : "unknown error";
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ success: false, msg });
     }
 }

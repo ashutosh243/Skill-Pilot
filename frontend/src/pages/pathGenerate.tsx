@@ -20,13 +20,16 @@ const PathGenerate = () => {
             const response = await axios.post(`${config.backendEndpoint}/api/v1/path/path-generate`, { id }, { withCredentials: true });
             const data = response?.data;
             
-            console.log("response in generate path",data?.result?.learningPath);
+            console.log("response in generate path",data);
            
             setPath(data?.result);
             saveTosession("path",data?.result);
 
             setThreadId(data.threadId);
             saveTosession("threadId",data.threadId);
+
+            setChoice("");
+            saveTosession("choice","");
 
             setGenerating(false);
         }
@@ -40,7 +43,6 @@ const PathGenerate = () => {
         try {
             setGenerating(true);
             const response = await axios.post(`${config.backendEndpoint}/api/v1/path/path-decision`, { threadId, choice },{withCredentials:true});
-            console.log("response in handle decision",response.data);
             setPath(response?.data?.result);
             saveTosession("path",response?.data?.result);
 
@@ -48,9 +50,7 @@ const PathGenerate = () => {
             saveTosession("choice",choice);
 
             setGenerating(false);
-            console.log("choice",choice,choice==='discard');
             if(choice==='discard'){
-                console.log("inside discard");
                 saveTosession("path",null);
                 setPath(null);
             }

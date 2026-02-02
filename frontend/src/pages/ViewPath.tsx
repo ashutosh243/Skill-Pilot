@@ -30,7 +30,7 @@ const ViewPath: React.FC = () => {
     console.log(path);
 
     return <>
-        <div className="pt-70    h-screen flex items-center justify-center ">
+        <div className="pt-96 h-screen flex items-center justify-center ">
             <LearningPathUI learningPathData={path} ></LearningPathUI>
         </div>
     </>
