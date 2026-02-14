@@ -13,7 +13,7 @@ const pathSchema = new mongoose.Schema({
     },
     level: {
         type: String,
-        enum: ["beginner", "Intermediate", "advanced"],
+        enum: ["beginner", "intermediate", "advanced"],
         required: true
     },
     timePerDay: {

@@ -11,11 +11,17 @@ const embeddings = new CohereEmbeddings({
 const pineconeClient = new Pinecone({
     apiKey: config.pine_cone_api_key
 });
+
 const index = pineconeClient.index(config.pine_cone_index);
 
 export async function storeDocument(document: Document[], namespace: string): Promise<void> {
 
-    await index.namespace(namespace).deleteAll();
+    const stats = await index.describeIndexStats();
+    const records = stats.namespaces?.[namespace]?.recordCount ?? 0;
+
+    if (records > 0)
+        await index.namespace(namespace).deleteAll();
+
     await PineconeStore.fromDocuments(document, embeddings, { pineconeIndex: index, namespace: namespace })
 }
 export async function loadVectorStore(namespace: string) {

@@ -7,11 +7,12 @@ import PathGenerate from '../pages/pathGenerate';
 import InterviewQuestion from "../pages/interviewQuestion.js";
 import Path from '../pages/Path.js';
 import ViewPath from "../pages/ViewPath.js";
+import Rag from '../pages/Rag.js';
 
 const Routers:React.FC=()=>{
 
     return <>
-         <Routes>
+        <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/path-generate' element={<PathGenerate/>}></Route>
             <Route path='/interview-question' element={<InterviewQuestion/>}></Route>
@@ -19,7 +20,8 @@ const Routers:React.FC=()=>{
             <Route path='/login' element={<LoginPage/>}></Route>
             <Route path='/path' element={<Path></Path>}></Route>
             <Route path="/view/:id" element={<ViewPath/>}></Route>
-         </Routes>
+            <Route path="/doc-prep" element={<Rag/>}></Route>
+        </Routes>
     </>
 
 }

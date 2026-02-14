@@ -2,7 +2,7 @@
 export const theme = {
   colors: {
     // Page & Cards
-    background: "bg-[#F8FAFC]",      // light neutral background
+    background: "bg-teal-50",      // light neutral background
     cardBg: "bg-white",              // cards and navbar background
     text: "text-gray-900",           // primary text
     subText: "text-gray-700",        // secondary text
@@ -10,7 +10,7 @@ export const theme = {
     disabledBg: "bg-green-50",       // disabled card background
 
     // Hero
-    heroBg: "bg-gradient-to-r from-green-100 via-teal-100 to-cyan-50", // Minty Fresh gradient
+    heroBg: "bg-gradient-to-r from-teal-500 via-teal-100 to-teal-400", // Minty Fresh gradient
 
     // Buttons
     primary: "bg-teal-500",          // Sign Up button

@@ -31,10 +31,10 @@ const InterviewSidebar: React.FC<InterviewSidebarProps> = ({ onGenerate }) => {
   };
 
   const handleGenerate = () => {
-     if(formData.technology.length==0||!formData.role||!formData.experience){
+    if (formData.technology.length == 0 || !formData.role || !formData.experience) {
       alert("Fill details to generate questions ");
       return;
-     }
+    }
     onGenerate({
       ...formData,
       message: formData.message?.trim() || "",
@@ -53,12 +53,12 @@ const InterviewSidebar: React.FC<InterviewSidebarProps> = ({ onGenerate }) => {
     "focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none";
 
   return (
-    <aside className="w-1/4 bg-white border-l border-gray-200 p-8 h-screen fixed right-0 top-0 z-10 py-24 space-y-6 shadow-lg">
+    <aside className="w-1/4 bg-linear-to-r from-teal-100 via-teal-50 to-teal-100 p-8 h-screen fixed right-0 top-0 z-10 py-24 space-y-6 shadow-lg">
       <h2 className="text-xl font-semibold text-gray-800">
         Generate Interview Questions
       </h2>
 
-    
+
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-600">
           Technologies
@@ -93,7 +93,7 @@ const InterviewSidebar: React.FC<InterviewSidebarProps> = ({ onGenerate }) => {
         />
       </div>
 
-    
+
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-600">
           Experience (Years)
@@ -127,9 +127,10 @@ const InterviewSidebar: React.FC<InterviewSidebarProps> = ({ onGenerate }) => {
       <button
         onClick={handleGenerate}
         className={` cursor-pointer
- w-full rounded-xl ${theme.colors.primary}
-        text-white py-3 text-sm font-semibold shadow-md 
-        hover:from-blue-700 hover:to-indigo-700 
+        w-full rounded-xl ${theme.colors.primary}
+          bg-linear-to-r from-teal-700 to-teal-500
+           text-white py-3 text-sm font-semibold shadow-md 
+            hover:from-teal-900 hover:to-teal-900
         active:scale-[0.98] transition`}
       >
         Generate Questions

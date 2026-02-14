@@ -46,7 +46,7 @@ const Register: React.FC = () => {
   }
   return (
     <div className={`${theme.colors.background} min-h-screen flex items-center justify-center`}>
-      <div className={`${theme.colors.cardBg} w-full max-w-md rounded-xl shadow-md p-8`}>
+      <div className={`${theme.colors.cardBg} w-full max-w-md rounded-xl shadow-xl p-8`}>
 
         <h2 className={`text-2xl font-bold text-center ${theme.colors.text}`}>
           Create Account
@@ -100,7 +100,9 @@ const Register: React.FC = () => {
 
           <button
             type="submit"
-            className={`w-full ${theme.colors.primary} ${theme.colors.primaryText} py-2 rounded-lg font-medium ${theme.colors.buttonHover}`}
+            className={`w-full  bg-gradient-to-r from-teal-700 to-teal-500
+                    text-white py-3 text-sm font-semibold shadow-md 
+                    hover:from-teal-900 hover:to-teal-900 py-2 rounded-lg font-medium ${theme.colors.buttonHover}`}
           >
             Sign Up
           </button>

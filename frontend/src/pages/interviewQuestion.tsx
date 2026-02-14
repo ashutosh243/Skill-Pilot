@@ -4,6 +4,7 @@ import config from '../config/config';
 import { useState } from 'react';
 import QuestionList from '../components/QuestionList';
 import { saveTosession, getFromSession } from '../utils/utils';
+import { theme } from '../theme';
 
 interface InterviewData {
     technology: string[];
@@ -40,7 +41,7 @@ const InterviewQuestion = () => {
     }
     return (
         <>
-            <div className='flex h-screen bg-gray-50 pt-10'>
+            <div className={`flex h-screen ${theme.colors.background} pt-10`}>
                 <div className="w-3/4 p-20 overflow-y-auto">
                     <QuestionList data={question} isLoading={loading} />
                 </div>

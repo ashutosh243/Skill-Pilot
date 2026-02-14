@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { PathFormData } from "../types/types";
 import axios, { AxiosError } from "axios";
 import config from "../config/config";
-import { theme } from "../theme";
+
 
 interface PathFormProps {
     onGenerate: (id: string) => Promise<void>;
@@ -16,7 +16,7 @@ const PathForm = ({ onGenerate }: PathFormProps) => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if(!goal||!timePerDay||!level){
+        if (!goal || !timePerDay || !level) {
             alert("Fill details to generate");
             return;
         }
@@ -52,7 +52,7 @@ const PathForm = ({ onGenerate }: PathFormProps) => {
         "focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none";
 
     return (
-        <aside className="w-1/4 bg-white border-l border-gray-200 p-8 h-screen fixed right-0 top-0 z-10 py-24 space-y-6 shadow-lg">
+        <aside className="w-1/4 bg-linear-to-r from-teal-100 via-teal-50 to-teal-100   p-8 h-screen fixed right-0 top-0 z-10 py-24 space-y-6 shadow-xl">
             <h2 className="text-xl font-semibold text-gray-800">
                 Generate Learning Path
             </h2>
@@ -129,10 +129,12 @@ const PathForm = ({ onGenerate }: PathFormProps) => {
                 <button
                     type="submit"
                     className={` cursor-pointer
-w-full rounded-xl ${theme.colors.primary}
+                    w-full rounded-xl 
+                     bg-linear-to-r from-teal-700 to-teal-500
                     text-white py-3 text-sm font-semibold shadow-md 
-                    hover:from-blue-700 hover:to-indigo-700 
-                    active:scale-[0.98] transition`}
+                    hover:from-teal-900 hover:to-teal-900
+                    active:scale-[0.98] transition
+                    `}
                 >
                     Generate Path
                 </button>

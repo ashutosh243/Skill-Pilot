@@ -20,7 +20,7 @@ export const learningDaySchema = z.object({
 
 export const pathBody = z.object({
     goal: z.string().trim(),
-    level: z.enum(["beginner", "intermediate", "advanced"]),
+    level: z.enum(["beginner","intermediate", "advanced"]),
     timePerDay: z.number(),
     currentSkills: z.array(z.string()).optional().default([]),
     targetSkills: z.array(z.string()).optional().default([]),

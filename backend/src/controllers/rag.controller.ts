@@ -10,6 +10,7 @@ export async function ingestPdf(req: Request, res: Response) {
         const userid = res.locals?.user?.id;
         const filepath = req?.file?.path as string;
         const response = await ingest(filepath, userid);
+        console.log("response from controller ",response);
         if (response === true) {
             return res.status(StatusCodes.OK).send({ success: true, msg: "file ingested successfully" });
         }

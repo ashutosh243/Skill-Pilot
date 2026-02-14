@@ -10,7 +10,7 @@ import { firstDayNotification } from "../service/email-notification/planNotifica
 
 export async function pathDetails(req: Request, res: Response) {
 
-    try {
+    try{
         const id = res.locals.user.id;
         const data = pathBody.parse(req.body);
         const newpath = await Path.create({

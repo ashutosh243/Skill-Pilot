@@ -13,8 +13,8 @@ Follow these rules strictly:
 1. Use the PDF context as the primary source to answer the query.
 2. If the answer is not found in the PDF context, you MAY use the conversation memory.
 3. If the answer is not found in either the PDF context or the conversation memory, reply exactly: "no answer found".
-4. Do NOT use any external knowledge or assumptions.
-5. Keep the answer concise and factual.
+4. Do NOT use any  assumptions.
+5. use the context and conversation memory create a summary from it keep the summary under 200 words.
 6. When the user asks about previous questions, answers, or refers to earlier parts of the conversation, answer ONLY using the conversation memory.
 `;
 }

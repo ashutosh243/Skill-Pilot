@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import config from "../config/config";
+import { theme } from "../theme";
 
 export interface Path {
     _id: string;
@@ -41,7 +42,7 @@ const AllPaths = () => {
     if (loading) return <p className="text-center mt-10">Loading...</p>;
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className={`max-w-7xl mx-auto px-4 py-8 ${theme.colors.background}`}>
             <h1 className="text-3xl font-bold text-teal-500 mb-6">
                 All Generated Paths
             </h1>

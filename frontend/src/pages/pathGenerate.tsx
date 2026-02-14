@@ -5,6 +5,7 @@ import config from '../config/config.js';
 import { useState } from 'react';
 import LearningPathSkeleton from '../components/LearningPathSkeleton.js';
 import { saveTosession, getFromSession } from '../utils/utils.js';
+import { theme } from '../theme.js';
 
 
 const PathGenerate = () => {
@@ -61,7 +62,7 @@ const PathGenerate = () => {
         }
     }
     return (
-        <div className="flex h-screen pt-10 bg-gray-50 ">
+        <div className={`flex h-screen pt-10 ${theme.colors.background} `}>
             <div className="w-3/4 p-20 overflow-y-auto ">
                 {
                   isGenerating?(<LearningPathSkeleton/>): (<LearningPathUI learningPathData={path} decision={handleDecision} choice={choice} /> )
