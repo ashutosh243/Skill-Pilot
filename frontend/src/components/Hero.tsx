@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           Plan your career path, practice interviews questions, and prepare pdf notes in one place.
         </p>
         <div className="flex justify-center space-x-4">
-          <Link to='/path-generate'> <button className={` px-6 prounded-lg f rounded-lg  from-teal-700 to-teal-500 text-white py-3 text-sm font-semibold shadow-md hover:from-teal-900 hover:to-teal-900 cursor-pointer`}>
+          <Link to='/path-generate'> <button className={` px-6 prounded-lg f rounded-lg bg-linear-to-r from-teal-700 to-teal-500 text-white py-3 text-sm font-semibold shadow-md hover:from-teal-900 hover:to-teal-900 cursor-pointer`}>
             Get Started
           </button>
           </Link>
