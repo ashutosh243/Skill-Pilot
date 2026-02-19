@@ -94,7 +94,7 @@ The agent pipeline works as follows:
 
 
 ## Agent Workflow
-![Overview](/docs/interview_workflow.png)
+![Agent workflow](/docs/Interview_workflow.png)
 
 # 3. Doc prep (RAG Based AI Agent)
 
