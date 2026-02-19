@@ -75,7 +75,7 @@ The agent uses:
 
 This project implements an **AI-powered Question Generation Agent** that combines **web-extracted questions** and **AI-generated questions** to produce a high-quality final question list for a given topic.
 
-The agent follows a structured workflow including query building, web search, validation, extraction, AI generation, and merging.
+The agent follows a structured workflow including query building, web search, validation, extraction, AI generation and merging.
 
 
 
