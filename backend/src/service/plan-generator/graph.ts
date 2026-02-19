@@ -36,15 +36,15 @@ const checkpointer = new MemorySaver();
 const graph = builder.compile({
     checkpointer: checkpointer
 })
-export async function startAgent(state: State){
+export async function startAgent(state: State) {
 
-    try{
-        const threadId=`${Date.now()}_${Math.floor(Math.random())*10}`;
-        const config = { configurable: { thread_id: threadId} }
+    try {
+        const threadId = `${Date.now()}_${Math.floor(Math.random()) * 10}`;
+        const config = { configurable: { thread_id: threadId } }
         const result = await graph.invoke(state, config);
         return {
             final: result,
-            threadId:threadId
+            threadId: threadId
         }
     }
     catch (e) {
@@ -53,20 +53,20 @@ export async function startAgent(state: State){
         throw e;
     }
 }
-//I have to implement resume agenet by tommorow export
-export async function resumeagent(threadId:string,choice:string){
-     
-    try{
-        const config={configurable:{thread_id:threadId}};
-        const result=await graph.invoke(
-            new Command({resume:{choice:choice}}),
+
+export async function resumeagent(threadId: string, choice: string) {
+
+    try {
+        const config = { configurable: { thread_id: threadId } };
+        const result = await graph.invoke(
+            new Command({ resume: { choice: choice } }),
             config
         );
         return result;
     }
-    catch(e)
-    {
-        const msg=(e instanceof Error)?e.message:"unknow Error";
-        console.log(e);
+    catch (e) {
+        const msg = (e instanceof Error) ? e.message : "unknow Error";
+        console.log(msg);
+
     }
 }
