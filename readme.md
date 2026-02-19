@@ -4,12 +4,12 @@ SkillPilot is an AI-powered career learning platform that helps users plan their
 
 The platform analyzes a user’s **goal**, **current skills**, and **learning preferences** to:
 - Generate structured learning roadmaps  
-- Create interview questions for practice  
+- Create interview questions for practice using webSearch and AI.  
 - Provide contextual answers using a knowledge-based chat system (RAG)
 
 Instead of relying on a single LLM call, SkillPilot uses **graph-based multi-step workflows** where different AI agents handle different responsibilities.
 
----
+
 
 ## Tech Stack
 
@@ -42,21 +42,10 @@ Instead of relying on a single LLM call, SkillPilot uses **graph-based multi-ste
 
 The platform consists of three main AI agents:
 
----
+
 
 ## 1. Learning Path Generator Agent
 
-### Purpose
-Generates a structured **day-wise learning roadmap** based on:
-- user goal  
-- current skills  
-- experience level  
-- available daily learning time  
-
-### Workflow
-
-
-# 1. AI Skill Learning Path Agent
 
 An AI-powered learning roadmap generator agent built using a graph-based workflow architecture with **LangGraph** and **LangChain**.
 
@@ -78,20 +67,19 @@ The agent uses:
 - Typed state validation using Zod  
 - Thread-based memory using checkpointer  
 
----
+
 ## Agent Workflow
 
 ![Overview](./docs/path_workflow.png)
-
 # 2 Question Generation Agent
 
 This project implements an **AI-powered Question Generation Agent** that combines **web-extracted questions** and **AI-generated questions** to produce a high-quality final question list for a given topic.
 
 The agent follows a structured workflow including query building, web search, validation, extraction, AI generation, and merging.
 
----
 
-## Workflow Overview
+
+## Overview
 
 The agent pipeline works as follows:
 
@@ -104,7 +92,39 @@ The agent pipeline works as follows:
 7. Web-extracted and AI-generated questions are merged, and a final structured list is prepared.
 8. The final question set is returned as the output.
 
----
-## Architecture Flow
-![Overview](./docs/Interview_workflow.png)
+
+## Architecture Workflow
+![Overview](./docs/interview_workflow.png)
+
+# 3. Doc prep (RAG Based AI Agent)
+
+Doc-Prep allows users to upload their own documents (PDFs, text, etc.), which are then processed by cleaning and splitting the content into smaller chunks and converting them into embeddings stored in a vector database. When a user asks a query, the system retrieves the most relevant parts of the uploaded documents and provides context-aware answers.
+
+
+
+## Overview
+
+This agent follows the **Retrieval-Augmented Generation pipeline**, where external knowledge is retrieved before response generation.
+
+**Core Components**
+- Document Loader
+- Text Chunking Module
+- Embedding Generator
+- Vector Database
+- Query Processor
+- LLM Response Generator
+
+**Flow**
+1. Documents are loaded and split into chunks.
+2. Embeddings are generated and stored in a vector database.
+3. A user query is converted into an embedding.
+4. Similar chunks are retrieved using semantic search.
+5. The retrieved context is passed to the LLM.
+6. The LLM generates the final response.
+
+
+
+## Agent Workflow
+
+![Agent Workflow](/docs/rag_workflow.png)
 
