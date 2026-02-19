@@ -106,5 +106,5 @@ The agent pipeline works as follows:
 
 ---
 ## Architecture Flow
-![Overview](./docs/interview_workflow.png)
+![Overview](./docs/Interview_workflow.png)
 
