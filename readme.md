@@ -93,8 +93,8 @@ The agent pipeline works as follows:
 8. The final question set is returned as the output.
 
 
-## Architecture Workflow
-![Overview](./docs/interview_workflow.png)
+## Agent Workflow
+![Overview](/docs/interview_workflow.png)
 
 # 3. Doc prep (RAG Based AI Agent)
 
